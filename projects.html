@@ -1,103 +1,207 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJECTS - JOI CONSTRUCTION LTD</title>
+  <title>JOI CONSTRUCTION LTD</title>
   <style>
     :root {
-      --bg-color: #121417;
-      --card-bg: #1a1e24;
-      --card-hover: #222831;
-      --accent: #d97706;
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --card-hover: #1f242c;
+      --accent: #f59e0b;
       --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border: #2e3642;
+      --text-muted: #94a3b8;
+      --border: #2d333b;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; padding: 3rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
-    .container { max-width: 860px; width: 100%; margin: 0 auto; }
-    .nav-back { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-bottom: 2rem; font-size: 0.95rem; }
-    .nav-back:hover { text-decoration: underline; }
-    h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
-    p.desc { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
-    
-    .project-list { display: flex; flex-direction: column; gap: 0.85rem; }
-    .project-item {
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero / Header Section */
+    header {
+      padding: 4rem 1.5rem 2.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, #1e2633 0%, var(--bg-color) 75%);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 1.5rem;
-      background: var(--card-bg);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Logo Styling */
+    .logo-container {
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      /* 흰색 배경을 다크 모드에 맞춰 투명하게 블렌딩 */
+      mix-blend-mode: screen; 
+      filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.2));
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    /* Main Navigation Grid */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
+      padding: 2.2rem 1.8rem;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
     }
-    .project-item:hover {
+
+    .card:hover {
+      transform: translateY(-5px);
       background-color: var(--card-hover);
       border-color: var(--accent);
-      transform: translateX(4px);
     }
-    .item-left { display: flex; align-items: center; gap: 1rem; }
-    .folder-icon { font-size: 1.3rem; }
-    .project-title { font-weight: 600; font-size: 1.05rem; }
-    .arrow { color: var(--accent); font-weight: 700; }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+      color: var(--accent);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .card-arrow {
+      margin-top: 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.8rem;
+      color: #64748b;
+      letter-spacing: 0.04em;
+      border-top: 1px solid var(--border);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="./index.html" class="nav-back">&larr; Back to Home</a>
-    <h1>PROJECTS</h1>
-    <p class="desc">현재 진행 및 완료된 현장 프로젝트 아카이브</p>
 
-    <div class="project-list">
-      <!-- 1 -->
-      <a href="./project-buchan.html" class="project-item">
-        <div class="item-left">
-          <span class="folder-icon">📁</span>
-          <span class="project-title">3 The Buchan, GU3 3XB - Mehul & Vee</span>
+  <header>
+    <div class="badge">Building &amp; Site Portfolio</div>
+    <div class="logo-container">
+      <img src="./logo.jpg" alt="JOI Construction Logo" class="logo-img">
+    </div>
+    <h1>JOI CONSTRUCTION LTD</h1>
+  </header>
+
+  <main>
+    <div class="nav-grid">
+      <!-- 01. PROJECTS -->
+      <a href="./projects.html" class="card">
+        <div>
+          <div class="card-icon">&#9638;</div>
+          <h2>PROJECTS</h2>
+          <p>Site developments, residential extensions, structural renovations, and architectural drawings.</p>
         </div>
-        <span class="arrow">&rarr;</span>
+        <div class="card-arrow">View Projects &rarr;</div>
       </a>
 
-      <!-- 2 -->
-      <a href="./project-grove-park.html" class="project-item">
-        <div class="item-left">
-          <span class="folder-icon">📁</span>
-          <span class="project-title">33 Grove Park Rd, KT3 5BZ - Bathroom Works - Saerrah Murryam</span>
+      <!-- 02. SITE MANAGING -->
+      <a href="./site-managing.html" class="card">
+        <div>
+          <div class="card-icon">&#9998;</div>
+          <h2>SITE MANAGING</h2>
+          <p>Supervision logs, site progress updates, safety records, and quality control documentation.</p>
         </div>
-        <span class="arrow">&rarr;</span>
+        <div class="card-arrow">View Logs &rarr;</div>
       </a>
 
-      <!-- 3 -->
-      <a href="./project-albemarle.html" class="project-item">
-        <div class="item-left">
-          <span class="folder-icon">📁</span>
-          <span class="project-title">37 Albemarle Gardens, KT3 5BB - Alison & Check</span>
+      <!-- 03. TOOLS -->
+      <a href="./tools.html" class="card">
+        <div>
+          <div class="card-icon">&#9881;</div>
+          <h2>TOOLS</h2>
+          <p>Site quantity takeoff, material checklists, electrical and structural calculation utilities.</p>
         </div>
-        <span class="arrow">&rarr;</span>
-      </a>
-
-      <!-- 4 -->
-      <a href="./project-the-downs.html" class="project-item">
-        <div class="item-left">
-          <span class="folder-icon">📁</span>
-          <span class="project-title">37 The Downs, SW20 8HG - Mark & Rosemary</span>
-        </div>
-        <span class="arrow">&rarr;</span>
-      </a>
-
-      <!-- 5 -->
-      <a href="./project-loftus.html" class="project-item">
-        <div class="item-left">
-          <span class="folder-icon">📁</span>
-          <span class="project-title">51 Loftus Road, W12 7EH - Graham & Elsa</span>
-        </div>
-        <span class="arrow">&rarr;</span>
+        <div class="card-arrow">View Tools &rarr;</div>
       </a>
     </div>
-  </div>
+  </main>
+
+  <footer>
+    &copy; 2026 JOI CONSTRUCTION LTD. All rights reserved.
+  </footer>
+
 </body>
 </html>
