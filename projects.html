@@ -8,28 +8,95 @@
     :root {
       --bg-color: #121417;
       --card-bg: #1a1e24;
+      --card-hover: #222831;
       --accent: #d97706;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --border: #2e3642;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
-    .container { max-width: 900px; width: 100%; margin: 0 auto; }
+    body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; padding: 3rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
+    .container { max-width: 860px; width: 100%; margin: 0 auto; }
     .nav-back { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-bottom: 2rem; font-size: 0.95rem; }
     .nav-back:hover { text-decoration: underline; }
-    h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
-    p.desc { color: var(--text-muted); margin-bottom: 2.5rem; }
-    .content-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; }
+    h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    p.desc { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
+    
+    .project-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .project-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    }
+    .project-item:hover {
+      background-color: var(--card-hover);
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+    .item-left { display: flex; align-items: center; gap: 1rem; }
+    .folder-icon { font-size: 1.3rem; }
+    .project-title { font-weight: 600; font-size: 1.05rem; }
+    .arrow { color: var(--accent); font-weight: 700; }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="./index.html" class="nav-back">&larr; Back to Home</a>
     <h1>PROJECTS</h1>
-    <p class="desc">시공 프로젝트 현황, 레노베이션 사례 및 구조 도면 아카이브</p>
-    <div class="content-box">
-      <p>프로젝트 목록을 여기에 정리해 작성하세요.</p>
+    <p class="desc">현재 진행 및 완료된 현장 프로젝트 아카이브</p>
+
+    <div class="project-list">
+      <!-- 1 -->
+      <a href="./project-buchan.html" class="project-item">
+        <div class="item-left">
+          <span class="folder-icon">📁</span>
+          <span class="project-title">3 The Buchan, GU3 3XB - Mehul & Vee</span>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <!-- 2 -->
+      <a href="./project-grove-park.html" class="project-item">
+        <div class="item-left">
+          <span class="folder-icon">📁</span>
+          <span class="project-title">33 Grove Park Rd, KT3 5BZ - Bathroom Works - Saerrah Murryam</span>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <!-- 3 -->
+      <a href="./project-albemarle.html" class="project-item">
+        <div class="item-left">
+          <span class="folder-icon">📁</span>
+          <span class="project-title">37 Albemarle Gardens, KT3 5BB - Alison & Check</span>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <!-- 4 -->
+      <a href="./project-the-downs.html" class="project-item">
+        <div class="item-left">
+          <span class="folder-icon">📁</span>
+          <span class="project-title">37 The Downs, SW20 8HG - Mark & Rosemary</span>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <!-- 5 -->
+      <a href="./project-loftus.html" class="project-item">
+        <div class="item-left">
+          <span class="folder-icon">📁</span>
+          <span class="project-title">51 Loftus Road, W12 7EH - Graham & Elsa</span>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
     </div>
   </div>
 </body>
