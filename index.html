@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JOI CONSTRUCTION LTD</title>
   <style>
     :root {
-      --bg-color: #121417;
-      --card-bg: #1a1e24;
-      --card-hover: #222831;
-      --accent: #d97706;
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --card-hover: #1f242c;
+      --accent: #f59e0b;
       --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border: #2e3642;
+      --text-muted: #94a3b8;
+      --border: #2d333b;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
@@ -30,41 +30,61 @@
       flex-direction: column;
     }
 
-    /* 히어로 섹션 */
+    /* Hero / Header Section */
     header {
-      padding: 5rem 1.5rem 3rem;
+      padding: 4rem 1.5rem 2.5rem;
       text-align: center;
-      border-bottom: 1px solid var(--border);
-      background: radial-gradient(circle at 50% 30%, #1f2733 0%, var(--bg-color) 70%);
+      background: radial-gradient(circle at 50% 20%, #1e2633 0%, var(--bg-color) 75%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .badge {
       display: inline-block;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.8rem;
-      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 700;
       color: var(--accent);
       border: 1px solid var(--accent);
       border-radius: 9999px;
-      margin-bottom: 1rem;
-      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Logo Styling */
+    .logo-container {
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      /* 흰색 배경을 다크 모드에 맞춰 투명하게 블렌딩 */
+      mix-blend-mode: screen; 
+      filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.2));
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+      font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-main);
     }
 
-    /* 메인 네비게이션 그리드 */
+    /* Main Navigation Grid */
     main {
       flex: 1;
       max-width: 1100px;
       width: 100%;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      padding: 2.5rem 1.5rem 4rem;
     }
 
     .nav-grid {
@@ -76,60 +96,61 @@
     .card {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2.25rem 1.75rem;
+      border-radius: 10px;
+      padding: 2.2rem 1.8rem;
       text-decoration: none;
       color: inherit;
       transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 200px;
+      min-height: 220px;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       background-color: var(--card-hover);
       border-color: var(--accent);
     }
 
-    .card-number {
-      font-size: 0.85rem;
-      font-weight: 700;
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: inline-block;
       color: var(--accent);
-      margin-bottom: 1rem;
-      letter-spacing: 0.1em;
     }
 
     .card h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+      color: #ffffff;
     }
 
     .card p {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .card-arrow {
       margin-top: 1.5rem;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.9rem;
       color: var(--accent);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
-    /* 푸터 */
+    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1.5rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: 0.8rem;
+      color: #64748b;
+      letter-spacing: 0.04em;
       border-top: 1px solid var(--border);
     }
   </style>
@@ -137,37 +158,43 @@
 <body>
 
   <header>
-    <div class="badge">BUILDING & SITE PORTFOLIO</div>
+    <div class="badge">Building &amp; Site Portfolio</div>
+    <div class="logo-container">
+      <img src="./logo.jpg" alt="JOI Construction Logo" class="logo-img">
+    </div>
     <h1>JOI CONSTRUCTION LTD</h1>
   </header>
 
   <main>
     <div class="nav-grid">
+      <!-- 01. PROJECTS -->
       <a href="./projects.html" class="card">
         <div>
-          <div class="card-number">01</div>
+          <div class="card-icon">&#9638;</div>
           <h2>PROJECTS</h2>
-          <p>시공 프로젝트 현황, 레노베이션 사례 및 구조 도면 아카이브</p>
+          <p>Site developments, residential extensions, structural renovations, and architectural drawings.</p>
         </div>
         <div class="card-arrow">View Projects &rarr;</div>
       </a>
 
+      <!-- 02. SITE MANAGING -->
       <a href="./site-managing.html" class="card">
         <div>
-          <div class="card-number">02</div>
+          <div class="card-icon">&#9998;</div>
           <h2>SITE MANAGING</h2>
-          <p>현장 감리, 작업 공정 기록, 안전 점검 및 현장 일지</p>
+          <p>Supervision logs, site progress updates, safety records, and quality control documentation.</p>
         </div>
         <div class="card-arrow">View Logs &rarr;</div>
       </a>
 
+      <!-- 03. TOOLS -->
       <a href="./tools.html" class="card">
         <div>
-          <div class="card-number">03</div>
+          <div class="card-icon">&#9881;</div>
           <h2>TOOLS</h2>
-          <p>현장 산출기, 규격 및 자재 체크리스트, 전기/시공 계산 도구</p>
+          <p>Site quantity takeoff, material checklists, electrical and structural calculation utilities.</p>
         </div>
-        <div class="card-arrow">Open Tools &rarr;</div>
+        <div class="card-arrow">View Tools &rarr;</div>
       </a>
     </div>
   </main>
