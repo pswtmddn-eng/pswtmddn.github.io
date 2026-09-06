@@ -6,85 +6,90 @@
   <title>JOI CONSTRUCTION LTD</title>
   <style>
     :root {
-      --bg-color: #0d1117;
+      --bg-dark: #0f1319;
       --card-bg: #161b22;
-      --card-hover: #1f242c;
-      --accent: #f59e0b;
+      --card-hover: #1c222b;
+      --joi-orange: #f59e0b;
+      --joi-orange-glow: rgba(245, 158, 11, 0.15);
       --text-main: #f3f4f6;
       --text-muted: #94a3b8;
-      --border: #2d333b;
+      --border: #262c36;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
-      background-color: var(--bg-color);
+      background-color: var(--bg-dark);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Hero / Header Section */
+    /* Hero / Header */
     header {
-      padding: 4rem 1.5rem 2.5rem;
+      padding: 3.5rem 1.5rem 2.5rem;
       text-align: center;
-      background: radial-gradient(circle at 50% 20%, #1e2633 0%, var(--bg-color) 75%);
+      background: radial-gradient(circle at 50% 30%, #1e2634 0%, var(--bg-dark) 70%);
       display: flex;
       flex-direction: column;
       align-items: center;
+      border-bottom: 1px solid var(--border);
     }
 
     .badge {
       display: inline-block;
-      padding: 0.3rem 0.85rem;
-      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: var(--accent);
-      border: 1px solid var(--accent);
+      color: var(--joi-orange);
+      border: 1px solid var(--joi-orange);
       border-radius: 9999px;
       margin-bottom: 1.5rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      background-color: var(--joi-orange-glow);
     }
 
-    /* Logo Styling */
-    .logo-container {
-      margin-bottom: 1.25rem;
-      display: flex;
+    /* Logo Frame - White Background Clean Framing */
+    .logo-wrapper {
+      background-color: #ffffff;
+      padding: 1rem 1.25rem 0.75rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      display: inline-flex;
       justify-content: center;
       align-items: center;
     }
 
     .logo-img {
-      max-width: 220px;
+      max-width: 170px;
+      width: 100%;
       height: auto;
       display: block;
-      /* 흰색 배경을 다크 모드에 맞춰 투명하게 블렌딩 */
-      mix-blend-mode: screen; 
-      filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.2));
     }
 
     h1 {
       font-size: clamp(1.8rem, 4.5vw, 2.75rem);
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-main);
     }
 
-    /* Main Navigation Grid */
+    /* Cards Grid */
     main {
       flex: 1;
       max-width: 1100px;
       width: 100%;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      padding: 3.5rem 1.5rem 4rem;
     }
 
     .nav-grid {
@@ -100,7 +105,7 @@
       padding: 2.2rem 1.8rem;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -108,23 +113,25 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       background-color: var(--card-hover);
-      border-color: var(--accent);
+      border-color: var(--joi-orange);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     }
 
-    .card-icon {
-      font-size: 1.5rem;
+    .card-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--joi-orange);
+      letter-spacing: 0.1em;
       margin-bottom: 0.75rem;
-      display: inline-block;
-      color: var(--accent);
     }
 
     .card h2 {
       font-size: 1.35rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.6rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
       color: #ffffff;
     }
 
@@ -135,10 +142,10 @@
     }
 
     .card-arrow {
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
       font-weight: 700;
       font-size: 0.9rem;
-      color: var(--accent);
+      color: var(--joi-orange);
       display: flex;
       align-items: center;
       gap: 0.4rem;
@@ -157,20 +164,24 @@
 </head>
 <body>
 
-<header>
-  <div class="badge">Building &amp; Site Portfolio</div>
-  <div class="logo-container">
-    <img class="logo-img" alt="JOI Construction Logo" src="https://github.com/user-attachments/assets/1c01a612-4d1e-48f1-aa54-21ac4df44400" />
-  </div>
-  <h1>JOI CONSTRUCTION LTD</h1>
-</header>
+  <header>
+    <div class="badge">Building &amp; Site Portfolio</div>
+    <div class="logo-wrapper">
+      <img 
+        src="https://github.com/user-attachments/assets/1c01a612-4d1e-48f1-aa54-21ac4df44400" 
+        alt="JOI Construction Logo" 
+        class="logo-img"
+      />
+    </div>
+    <h1>JOI CONSTRUCTION LTD</h1>
+  </header>
 
   <main>
     <div class="nav-grid">
       <!-- 01. PROJECTS -->
       <a href="./projects.html" class="card">
         <div>
-          <div class="card-icon">&#9638;</div>
+          <div class="card-num">01</div>
           <h2>PROJECTS</h2>
           <p>Site developments, residential extensions, structural renovations, and architectural drawings.</p>
         </div>
@@ -180,7 +191,7 @@
       <!-- 02. SITE MANAGING -->
       <a href="./site-managing.html" class="card">
         <div>
-          <div class="card-icon">&#9998;</div>
+          <div class="card-num">02</div>
           <h2>SITE MANAGING</h2>
           <p>Supervision logs, site progress updates, safety records, and quality control documentation.</p>
         </div>
@@ -190,7 +201,7 @@
       <!-- 03. TOOLS -->
       <a href="./tools.html" class="card">
         <div>
-          <div class="card-icon">&#9881;</div>
+          <div class="card-num">03</div>
           <h2>TOOLS</h2>
           <p>Site quantity takeoff, material checklists, electrical and structural calculation utilities.</p>
         </div>
