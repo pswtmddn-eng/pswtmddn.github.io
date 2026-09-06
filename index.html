@@ -1,11 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOI CONSTRUCTION SITE OPERATING </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOI CONSTRUCTION LTD</title>
+  <style>
+    :root {
+      --bg-color: #121417;
+      --card-bg: #1a1e24;
+      --card-hover: #222831;
+      --accent: #d97706; /* 현장 느낌의 앰버/세이프티 옐로 */
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border: #2e3642;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 히어로 섹션 */
+    header {
+      padding: 5rem 1.5rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at 50% 30%, #1f2733 0%, var(--bg-color) 70%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    /* 메인 네비게이션 그리드 */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2.25rem 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 200px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background-color: var(--card-hover);
+      border-color: var(--accent);
+    }
+
+    .card-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .card-arrow {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* 푸터 */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
 </head>
 <body>
-    git pages 입니다.
+
+  <header>
+    <div class="badge">BUILDING & SITE PORTFOLIO</div>
+    <h1>JOI CONSTRUCTION LTD</h1>
+  </header>
+
+  <main>
+    <div class="nav-grid">
+      <a href="./projects.html" class="card">
+        <div>
+          <div class="card-number">01</div>
+          <h2>PROJECTS</h2>
+          <p>시공 프로젝트 현황, 레노베이션 사례 및 구조 도면 아카이브</p>
+        </div>
+        <div class="card-arrow">View Projects &rarr;</div>
+      </a>
+
+      <a href="./site-managing.html" class="card">
+        <div>
+          <div class="card-number">02</div>
+          <h2>SITE MANAGING</h2>
+          <p>현장 감리, 작업 공정 기록, 안전 점검 및 현장 일지</p>
+        </div>
+        <div class="card-arrow">View Logs &rarr;</div>
+      </a>
+
+      <a href="./tools.html" class="card">
+        <div>
+          <div class="card-number">03</div>
+          <h2>TOOLS</h2>
+          <p>현장 산출기, 규격 및 자재 체크리스트, 전기/시공 계산 도구</p>
+        </div>
+        <div class="card-arrow">Open Tools &rarr;</div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 JOI CONSTRUCTION LTD. All rights reserved.
+  </footer>
+
 </body>
 </html>
